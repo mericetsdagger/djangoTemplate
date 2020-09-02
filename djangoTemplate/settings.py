@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userProfile',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,5 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 LOGIN_REDIRECT_URL = '/profil/'
-LOGOUT_REDIRECT_URL = '/logout/'
+LOGOUT_REDIRECT_URL = '/profil/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
