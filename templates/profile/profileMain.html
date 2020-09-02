@@ -1,6 +1,6 @@
 {% block content %}
 {% if user.is_authenticated %}
-  Welcome {‌{ request.user.username }} <a href="{% url 'logout' %}">logout</a>
+  Welcome {{ user.username }}! <a href="{% url 'logout' %}">logout</a>
 {% else %}
   You are not logged in <a href="{% url 'login' %}">login</a>
 {% endif %}
