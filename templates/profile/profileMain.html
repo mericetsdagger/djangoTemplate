@@ -2,7 +2,13 @@
 {% block content %}
 {% if user.is_authenticated %}
   Welcome {{ user.username }}! <a href="{% url 'logout' %}">logout</a>
+  <br /><br />
+  Operacje na koncie:
+  <br />
+  <a href="{% url 'password_change' %}">Zmiana hasła</a>
 {% else %}
-  You are not logged in <a href="{% url 'login' %}">login</a>
+  Nie jesteś zalogowany <a href="{% url 'login' %}">Zaloguj</a> lub <a href="{% url 'signup' %}">Zarejestruj się</a>
+  <br />
+  Nie pamiętasz hasła? <a href="{% url 'password_reset' %}">Zresetuj</a>
 {% endif %}
 {% endblock %}
