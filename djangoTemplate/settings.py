@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'userProfile',
     'accounts.apps.AccountsConfig',
     'home',
+    'privileges',
 ]
 
 MIDDLEWARE = [
