@@ -1,11 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-  Welcome {{ user.username }}! <a href="{% url 'logout' %}">logout</a>
+  Witaj {{ user.username }}! <a href="{% url 'logout' %}">logout</a>
   <br /><br />
   Operacje na koncie:
   <br />
   <a href="{% url 'password_change' %}">Zmiana hasła</a>
+
+<div id="mojeDane">
+a
+</div>
+
+<div id="mojeKonto">
+  b
+</div>
+
+<div id="zakupLicencje">
+c
+</div>
+
+<div id="mojeLicencje">
+d
+</div>
+
+
+
+
+
+
 {% else %}
   Nie jesteś zalogowany <a href="{% url 'login' %}">Zaloguj</a> lub <a href="{% url 'signup' %}">Zarejestruj się</a>
   <br />
