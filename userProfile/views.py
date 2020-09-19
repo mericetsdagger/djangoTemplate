@@ -7,10 +7,14 @@ class ProfileView(generic.ListView):
     template_name = 'profile/profileMain.html'
     model = UserProfile
 
-    def my_prvs(request):
-        obj = Prvs.objects.get(id=user_id)
+    def my_prvs(request, *args, **kwargs):
+        obj = Prvs.objects.get(id=1)
         context = {
             'object': obj
         }
-        return render(request, template_name, context)
+
+        contextText = {
+            "texxt": 123,
+        }
+        return render(request, "profile/profileMain.html", contextText)
 
