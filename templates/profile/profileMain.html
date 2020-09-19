@@ -20,7 +20,8 @@ c
 </div>
 
 <div id="mojeLicencje">
-d
+{% if object.prvTypeId != None %} {{object.prvTypeId}}
+  {% else %} Brak zakupionych licencji {% endif %}
 </div>
 
 
