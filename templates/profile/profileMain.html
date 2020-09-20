@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-  Witaj {{ user.username }}! <a href="{% url 'logout' %}">logout</a>
+  Witaj {{ user.username }}! email: {{ user.email }} <a href="{% url 'logout' %}">logout</a>
   <br /><br />
   Operacje na koncie:
   <br />
@@ -20,8 +20,8 @@ c
 </div>
 
 <div id="mojeLicencje">
-{% if object.prvTypeId != None %} {{object.prvTypeId}}
-  {% else %} Brak zakupionych licencji {% endif %}
+  {{ texxt }}
+
 </div>
 
 
