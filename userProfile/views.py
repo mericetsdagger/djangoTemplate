@@ -9,10 +9,12 @@ class ProfileView(generic.ListView):
     model = UserProfile
 
 def user_data_view(request):
-    form = UserDataForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-
+    if request.method=='POST':
+        form = UserDataForm(data=request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserDataForm(instance=request.user)
     context = {
         'form': form
     }
