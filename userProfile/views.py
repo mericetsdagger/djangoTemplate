@@ -2,19 +2,18 @@ from django.shortcuts import render
 from .models import UserProfile
 from django.views import generic
 from privileges.models import Prvs
+from .forms import UserDataForm
 
 class ProfileView(generic.ListView):
     template_name = 'profile/profileMain.html'
     model = UserProfile
 
-    def my_prvs(request, *args, **kwargs):
-        obj = Prvs.objects.get(id=1)
-        context = {
-            'object': obj
-        }
+def user_data_view(request):
+    form = UserDataForm(request.POST or None)
+    if form.is_valid():
+        form.save()
 
-        contextText = {
-            "texxt": 123,
-        }
-        return render(request, "profile/profileMain.html", contextText)
-
+    context = {
+        'form': form
+    }
+    return render(request, "profile/userData.html", context)
