@@ -10,8 +10,8 @@ class UserProfile(models.Model):
     profileType = models.IntegerField(default=1)
     fish_asso = models.ForeignKey('privileges.FishAsso', on_delete=models.DO_NOTHING, null=True)
 
-    def __str__(selfself):
-        return self.user.username
+    #def __str__(selfself):
+    #    return self.user.username
 
     class Meta:
         db_table = 'userprofile'

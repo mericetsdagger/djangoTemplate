@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import UserProfile
 
 class UserDataForm(forms.ModelForm):
     class Meta:
@@ -8,4 +9,11 @@ class UserDataForm(forms.ModelForm):
             'first_name',
             'last_name',
             'email'
+        ]
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = [
+            'fish_asso'
         ]
