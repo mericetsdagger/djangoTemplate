@@ -19,3 +19,15 @@ def user_data_view(request):
         'form': form
     }
     return render(request, "profile/userData.html", context)
+
+def profile_data_view(request):
+    if request.method=='POST':
+        form = UserDataForm(data=request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserDataForm(instance=request.user)
+    context = {
+        'form': form
+    }
+    return render(request, "profile/profileData.html", context)
