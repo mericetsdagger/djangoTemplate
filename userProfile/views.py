@@ -24,7 +24,8 @@ def profile_data_view(request):
     if request.method=='POST':
         form = UserProfileForm(data=request.POST, instance=request.user)
         if form.is_valid():
-            form.save(commit=True)
+            form.save()
+
     else:
         form = UserProfileForm(instance=request.user)
     context = {
