@@ -1,13 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-  Tutaj możesz wprowadzić pozostałe dane do profilu, {{ user.username }}!
-
-<form method="POST"> {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Zapisz" />
-</form>
-
+  Tutaj możesz dokonać zakupu licencji, {{ user.username }}!
 
 
 

@@ -32,3 +32,11 @@ def profile_data_view(request):
         'form': form
     }
     return render(request, "profile/profileData.html", context)
+
+def buy_licence_view(request):
+    context = {}
+    return render(request, "profile/buyLicence.html", context)
+
+def my_licences_view(request):
+    context = {}
+    return render(request, "profile/myLicences.html", context)

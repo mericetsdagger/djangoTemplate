@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from home.views import home_view
-from userProfile.views import user_data_view, profile_data_view
+from userProfile.views import user_data_view, profile_data_view, buy_licence_view, my_licences_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('userData', user_data_view),
     path('profileData', profile_data_view),
+    path('buyLicence', buy_licence_view),
+    path('myLicences', my_licences_view),
 ]
