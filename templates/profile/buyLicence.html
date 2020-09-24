@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+  Tutaj możesz wprowadzić pozostałe dane do profilu, {{ user.username }}!
+
+<form method="POST"> {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Zapisz" />
+</form>
+
+
+
+
+
+{% else %}
+  Nie jesteś zalogowany <a href="{% url 'login' %}">Zaloguj</a> lub <a href="{% url 'signup' %}">Zarejestruj się</a>
+  <br />
+  Nie pamiętasz hasła? <a href="{% url 'password_reset' %}">Zresetuj</a>
+{% endif %}
+{% endblock %}
